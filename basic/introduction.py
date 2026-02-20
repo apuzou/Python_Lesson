@@ -15,7 +15,7 @@
 # print("Hi","Mike",sep=",",end=".\n")
 # print("Hi","Mike",sep=",",end=".\n")
 
-# 数値計算
+# # 数値計算
 # import math
 
 # result = math.sqrt(25)
@@ -24,7 +24,7 @@
 
 # print(help(math))
 
-# 文字列
+# # 文字列
 # print('hello.\nHow are you?')
 # print(r'C:\name\name')
 
@@ -57,7 +57,7 @@
 # print(s.lower())
 # print(s.replace("Mike", "Nancy"))
 
-# リスト
+# # リスト
 # scores = [82, 74, 60, 92, 70]
 # print(scores)
 # print(scores[2])
@@ -122,7 +122,7 @@
 
 # print(help(list))
 
-# 辞書
+# # 辞書
 # 辞書はキーと値のペアを持つ
 # scores = {"数学": 82, "国語": 74, "英語": 60, "理科": 92, "社会": 70}
 # print(scores)
@@ -136,7 +136,7 @@
 
 # print(help(dict))
 
-# タプル
+# # タプル
 # タプルは値を代入できない(読み込み専用として使用する)
 # t = (1, 2, 3, 4, 5)
 # print(t)
@@ -144,7 +144,7 @@
 
 # print(help(tuple))
 
-# 集合
+# # 集合
 # 集合は重複する値を持たない(重複する値は1つになる)
 # a = {1, 2, 2, 3, 4, 5}
 # print(a)
