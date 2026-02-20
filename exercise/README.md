@@ -16,17 +16,31 @@
 
 ## ディレクトリ構成
 
+MVC＋テンプレート構成です。
+
 ```
 exercise/
 ├── README.md           # 本ファイル（概要・実行方法）
 ├── main.py             # エントリポイント
-├── requirements.txt    # 依存（termcolor）
+├── requirements.txt   # 依存（termcolor）
 ├── ranking.csv         # 実行後に生成されるレストランランキング
 └── roboter/            # パッケージ
     ├── __init__.py
-    ├── conversation.py # 会話メッセージ
-    ├── csv_manager.py  # ranking.csv の読み書き
-    └── formatter.py    # パスカルケース変換
+    ├── controller/     # 会話の流れ
+    │   ├── __init__.py
+    │   └── conversation.py
+    ├── models/         # データ・ビジネスロジック
+    │   ├── __init__.py
+    │   ├── ranking.py  # ranking.csv の読み書き
+    │   └── robot.py    # パスカルケース変換など
+    ├── templates/      # メッセージ文
+    │   ├── hello.txt
+    │   ├── which_restaurant.txt
+    │   ├── like_restaurant.txt
+    │   └── good_by.txt
+    └── views/          # ターミナル表示・入力
+        ├── __init__.py
+        └── console.py
 ```
 
 ## 実行方法

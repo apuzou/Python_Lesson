@@ -4,6 +4,16 @@ import csv
 import os
 
 
+def _to_pascal_case(s: str) -> str:
+    """文字列をパスカルケース（各単語の先頭を大文字）に変換する。
+
+    例: "cool one" -> "Cool One", "japanese apple" -> "Japanese Apple"
+    """
+    if not s or not s.strip():
+        return ""
+    return " ".join(word.capitalize() for word in s.strip().split())
+
+
 def _get_filepath(filename: str, base_dir: str) -> str:
     """base_dir を基準にしたファイルパスを返す。"""
     return os.path.join(base_dir, filename)
@@ -40,7 +50,12 @@ def increment_and_save(
     """指定レストラン名のカウントを1増やし、ranking.csv に保存する。
 
     既存になければ COUNT=1 で追加する。
+    レストラン名はパスカルケースに正規化して保存する。
     """
+    restaurant_name = _to_pascal_case(restaurant_name)
+    if not restaurant_name:
+        return
+
     filepath = _get_filepath(filename, base_dir)
     rows = load_ranking(base_dir, filename)
     name_to_count = {name: count for name, count in rows}
