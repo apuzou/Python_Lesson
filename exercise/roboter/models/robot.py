@@ -5,15 +5,15 @@ from typing import Literal
 
 from roboter.models import ranking
 
+from roboter.views.console import show_message_block
+
 RANKING_FILENAME = "ranking.csv"
 
 
 class RestaurantRobot:
     """レストラン推薦の会話を行うロボット。"""
 
-    def __init__(self, view: object, base_dir: str) -> None:
-        """view は show_message_block(text) と read_input() -> str を持つオブジェクト。"""
-        self._view = view
+    def __init__(self, base_dir: str) -> None:
         self._base_dir = base_dir
 
     def _templates_dir(self) -> str:
@@ -33,7 +33,7 @@ class RestaurantRobot:
         content = self._load_template(template_name)
         if kwargs:
             content = content.format(**kwargs)
-        self._view.show_message_block(content)
+        show_message_block(content)
 
     def _save_restaurant(self, restaurant_name: str) -> None:
         """レストランをランキングに追加・更新して保存する。"""
