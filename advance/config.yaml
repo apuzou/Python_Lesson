@@ -1,0 +1,10 @@
+database:
+  database: test_db
+  host: 127.0.0.1
+  password: password
+  port: 3306
+  user: root
+debug: true
+web_server:
+  host: 127.0.0.1
+  port: 80
