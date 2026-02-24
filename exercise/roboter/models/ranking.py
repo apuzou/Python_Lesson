@@ -1,8 +1,10 @@
 """ranking.csv の読み書き・カウント更新を行うモジュール。"""
 
 import csv
+import logging
 import os
 
+logger = logging.getLogger(__name__)
 
 def _to_pascal_case(s: str) -> str:
     """文字列をパスカルケース（各単語の先頭を大文字）に変換する。
@@ -26,6 +28,7 @@ def load_ranking(base_dir: str, filename: str = "ranking.csv") -> list[tuple[str
     """
     filepath = _get_filepath(filename, base_dir)
     if not os.path.exists(filepath):
+        logger.warning(f"ファイルが存在しません: {filepath}")
         return []
 
     rows = []
@@ -69,3 +72,7 @@ def increment_and_save(
         writer.writerow(["NAME", "COUNT"])
         for name, count in new_rows:
             writer.writerow([name, count])
+    logger.info({
+        "action": "save",
+        "status": "success",
+    })
