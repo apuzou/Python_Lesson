@@ -7,11 +7,11 @@ import seaborn as sns
 
 st.title('Walmart Sales Prediction')
 
-features = pd.read_csv('practice/Kaggle_Walmart/features.csv')
-stores = pd.read_csv('practice/Kaggle_Walmart/stores.csv')
-df_test = pd.read_csv('practice/Kaggle_Walmart/test.csv')
-df_train = pd.read_csv('practice/Kaggle_Walmart/train.csv')
-submit = pd.read_csv('practice/Kaggle_Walmart/sampleSubmission.csv')
+features = pd.read_csv('practice/features.csv')
+stores = pd.read_csv('practice/stores.csv')
+df_test = pd.read_csv('practice/test.csv')
+df_train = pd.read_csv('practice/train.csv')
+submit = pd.read_csv('practice/sampleSubmission.csv')
 
 st.write(features.head())
 st.write(stores.head())
