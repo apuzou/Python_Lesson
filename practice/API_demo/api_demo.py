@@ -1,15 +1,15 @@
+import datetime
 import os
+import time
+from pathlib import Path
+
+import pandas as pd
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from slack_sdk import WebClient
-from dotenv import load_dotenv
-from pathlib import Path
-
-import time
-import pandas as pd
-import datetime
 
 
 options = Options()
